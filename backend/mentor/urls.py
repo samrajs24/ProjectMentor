@@ -3,6 +3,9 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+    # URLs for Search
+    path('search/', views.SearchView.as_view(), name='search'),
+
     # URLs for Mentor CRUD operations
     path('mentors/', views.MentorList.as_view(), name='mentor-list'),
     path('mentors/<int:pk>/', views.MentorDetail.as_view(), name='mentor-detail'),
