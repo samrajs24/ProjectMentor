@@ -13,7 +13,8 @@ const SearchComponent = ({ handleSearch }) => {
     event.preventDefault();
     try {
       // Make a GET request to the backend with the search query
-      const response = await axios.get(`search/?query=${query}`);
+      const response = await axios.get(`http://127.0.0.1:8000/mentor/search/?query=${query}`);
+      console.log(response)
       // Update the search results state with the response data
       setSearchResults(response.data.results);
       // Pass the search results to the parent component
